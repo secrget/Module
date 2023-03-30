@@ -26,3 +26,4 @@ def print_population_changes(populations):
 # Зчитуємо дані та виводимо зміну населення за роками
 populations = read_data('population.txt')
 print_population_changes(populations)
+#new
