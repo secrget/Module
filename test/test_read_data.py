@@ -11,3 +11,4 @@ def test_read_data():
     }
     actual = read_data('population.txt')
     assert actual == expected
+# тести були спеціально в ведені не правильні данні щоб вони були FAILD

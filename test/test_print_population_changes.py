@@ -16,3 +16,4 @@ def test_print_population_changes():
     print_population_changes(populations)
     sys.stdout = sys.__stdout__
     assert captured_output.getvalue() == expected_output
+# тести були спеціально в ведені не правильні данні щоб вони були FAILD
