@@ -1,13 +1,17 @@
+def read_data(filename):
+    """Зчитує дані з файлу та повертає словник з населенням країн за роками"""
+    populations = {}
+    with open(filename, 'r') as f:
+        data = f.readlines()
+    for row in data:
+        country, year, population = row.strip().split(',')
+        if country not in populations:
+            populations[country] = {}
+        populations[country][year] = int(population)
+    return populations
 
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Зчитуємо дані та виводимо зміну населення за роками
+populations = read_data('population.txt')
+#print_population_changes(populations)
