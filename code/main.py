@@ -11,7 +11,18 @@ def read_data(filename):
     return populations
 
 
+def print_population_changes(populations):
+    """Виводить дані про зміну населення за роками для кожної країни"""
+    for country, population_data in populations.items():
+        print(f"{country}:")
+        years = sorted(population_data.keys())
+        for i in range(1, len(years)):
+            prev_pop = population_data[years[i - 1]]
+            curr_pop = population_data[years[i]]
+            change = curr_pop - prev_pop
+            print(f"\t{years[i]}: {change:,}")
+
 
 # Зчитуємо дані та виводимо зміну населення за роками
 populations = read_data('population.txt')
-#print_population_changes(populations)
+print_population_changes(populations)
